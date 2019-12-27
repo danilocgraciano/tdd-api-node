@@ -2,9 +2,9 @@ const routes = require('express').Router();
 
 const authMiddleware = require('./app/middlewares/auth');
 
-const SessionController = require('../src/app/controllers/SessionController');
+const AuthController = require('../src/app/controllers/AuthController');
 
-routes.post('/sessions', SessionController.store);
+routes.post('/login', AuthController.login);
 
 routes.use(authMiddleware);
 

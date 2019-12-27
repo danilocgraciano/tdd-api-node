@@ -17,7 +17,7 @@ describe('Authentication', () => {
         });
 
         const response = await request(app)
-            .post('/sessions')
+            .post('/login')
             .send({
                 email: user.email,
                 password: '123123'
@@ -29,7 +29,7 @@ describe('Authentication', () => {
     it('Should not authenticate with invalid credentials', async () => {
 
         const response = await request(app)
-            .post('/sessions')
+            .post('/login')
             .send({
                 email: '',
                 password: ''
@@ -45,7 +45,7 @@ describe('Authentication', () => {
         });
 
         const response = await request(app)
-            .post('/sessions')
+            .post('/login')
             .send({
                 email: user.email,
                 password: '999999'
@@ -61,7 +61,7 @@ describe('Authentication', () => {
         });
 
         const response = await request(app)
-            .post('/sessions')
+            .post('/login')
             .send({
                 email: user.email,
                 password: '123123'
